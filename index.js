@@ -3,6 +3,7 @@
 const pexelApiKey = '563492ad6f917000010000011bdc2da76e6344cfa398e5038f23b7a4';
 const pexelUrl = "https://api.pexels.com/v1/search";
 const quoteUrl = "https://quote-garden.herokuapp.com/api/v2/quotes/random";
+const adviceUrl = "https://api.adviceslip.com/advice";
 
 function formatQueryParams(params){ //for pexel api search
   const queryItems = Object.keys(params).map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
@@ -49,8 +50,9 @@ function getImage(query){ //retrieve image from json
     console.log(responseJson);
     $('#quote').empty();
     $('#quote').append(`<h2><em>"${responseJson.quote.quoteText}"</em></h2><p>By ${responseJson.quote.quoteAuthor}</p>`);
-
+    $(getAdvice); //calls getAdvice function
   }
+
   function getQuote(){ //fetch json from random quote
     fetch(quoteUrl)
       .then(response => {
@@ -64,7 +66,25 @@ function getImage(query){ //retrieve image from json
         $('#js-error-message').text(`Something went wrong: ${err.message}`);
       });
   }
+  function displayAdvice(responseJson){ //display random piece of advice
+    console.log(responseJson);
+    $('#advice').empty();
+    $('#advice').append(`<h2><em>"${responseJson.slip.advice}"</em></h2>`);
+  }
 
+  function getAdvice(){
+    fetch(adviceUrl)
+      .then(response => {
+        if(response.ok) {
+          return response.json();
+        }
+        throw new Error (response.statusText);
+      })
+      .then(responseJson => displayAdvice(responseJson))
+      .catch(err =>{
+        $('#js-error-message').text(`Something went wrong: ${err.message}`);
+      });
+  }
 function watchForm(){ //event listener for initial form
   $('#js-form').submit(event => {
     event.preventDefault();

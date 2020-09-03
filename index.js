@@ -20,8 +20,10 @@ function displayImage(responseJson){ //display random image from pexel search
   }
   else{
     $('#js-form').remove(); //removes the form
+    $('html').removeClass('background');
+    $('h1').addClass('hidden');
     $('#results').removeClass('hidden');
-  const random = Math.floor(Math.random() * Math.floor(74));
+  const random = Math.floor(Math.random() * Math.floor(responseJson.photos.length));
   $('#image').empty();
   $('#image').append(`<img src="${responseJson.photos[random].src.medium}">`);
 
@@ -60,7 +62,7 @@ function getImage(query){ //retrieve image from json
     console.log(responseJson);
     $('#quote').empty();
     $('#quote').append(`<h3><em>"${responseJson.quote.quoteText}"</em></h3><p>By ${responseJson.quote.quoteAuthor}</p>`);
-    $('#buttons').append(`<button type="button" class="new-result item">New Results</button><button type="button" class="restart item">Start Over</button>`);
+    $('#buttons').append(`<button type="button" class="new-result item">NEW RESULT</button><button type="button" class="restart item">START OVER</button>`);
 
   }
 

@@ -1,0 +1,120 @@
+color {cyber-grape: #3D3765ff;
+--xiketic: #0A0418ff;
+--baby-blue-eyes: #A8CDF5ff;
+--lapis-lazuli: #305C93ff;
+--english-violet: #4F3155ff;
+}
+
+html{
+    font-family: 'Kumbh Sans', sans-serif;
+}
+.container{
+  text-align: center;
+  margin: 100px 0;
+}
+h1{
+    font-size: 60px;
+    background-color: rgba(168, 205, 245, 0.644);
+    border-radius: 25px;
+    padding: 5px;
+}
+.hidden{
+    display: none;
+}
+/*for form */
+html{
+    background: url("galexy.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+} 
+
+#js-form, #results{
+    margin:0px 10px;
+    padding:30px;
+    border-radius: 25px;
+    background-color: rgba(168, 205, 245, 0.644);
+    text-align: center;
+   
+}
+
+label{
+    font-size: 40px;
+}
+input{
+    font-size: 30px;
+    margin: 10px 0;
+    font-family: 'Kumbh Sans', sans-serif;
+    text-align: center;
+    background-color: rgb(199, 196, 209);
+    color: rgb(177, 164, 209);
+}
+
+button, .submit{
+    border-radius: 15px;
+    width:280px;
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: rgb(134, 71, 146);
+    color: rgb(5, 8, 12);
+    border-color:#0A0418ff;
+}
+
+.submit{
+    padding:5px;
+    font-size:30px;
+}
+
+/*Results*/
+
+h2{
+    font-size: 40px;
+}
+
+h3{
+    font-size: 25px;
+}
+
+p{
+    font-size: 25px;
+}
+
+img {
+    max-width: 100%;
+}
+
+/*result page buttons */
+.group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px;
+    padding:10px;
+}
+
+button{
+    width: 150px;
+    padding: 4px;
+    font-size: 25px;
+}
+
+@media all and (min-width: 800px){
+    #js-form, #results{
+        margin: 0 150px;
+    }
+    h1{
+        font-size: 70px;
+        margin: 150px 150px 0;
+    }
+    h2{
+        font-size: 45px;
+    }
+
+    h3{
+        font-size: 35px;
+    }
+
+    p{
+        font-size: 30px;
+    }
+}

@@ -4,8 +4,9 @@ const store =[];
 
 const pexelApiKey = '563492ad6f917000010000011bdc2da76e6344cfa398e5038f23b7a4';
 const pexelUrl = "https://api.pexels.com/v1/search";
-const quoteUrl = "https://quote-garden.herokuapp.com/api/v2/quotes/random";
 const adviceUrl = "https://api.adviceslip.com/advice";
+
+
 
 function formatQueryParams(params){ //for pexel api search
   const queryItems = Object.keys(params).map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
@@ -61,25 +62,32 @@ function getImage(query){ //retrieve image from json
   function displayQuote(responseJson){ //display random quote
     console.log(responseJson);
     $('#quote').empty();
-    $('#quote').append(`<h3><em>"${responseJson.quote.quoteText}"</em></h3><p>By ${responseJson.quote.quoteAuthor}</p>`);
+    $('#quote').append(`<h3><em>"${responseJson.content}"</em></h3><p>By ${responseJson.originator.name}</p>`);
     $('#buttons').append(`<button type="button" class="new-result item">NEW RESULT</button><button type="button" class="restart item">START OVER</button>`);
 
   }
 
-  function getQuote(){ //fetch json from random quote
-    fetch(quoteUrl)
-      .then(response => {
-        if(response.ok) {
-          return response.json();
-        }
-        throw new Error (response.statusText);
-      })
-      .then(responseJson => displayQuote(responseJson))
-      .catch(err =>{
-        $('#js-error-message').text(`Something went wrong: ${err.message}`);
-      });
+  function getQuote(){ //fetch json for random quote
+    fetch("https://quotes15.p.rapidapi.com/quotes/random/?language_code=en", {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-host": "quotes15.p.rapidapi.com",
+      "x-rapidapi-key": "705e8bd70bmshacd70beae417977p178366jsn208efed14c1c"
+    }
+  })
+  .then(response => {
+    if(response.ok) {
+      return response.json();
+    }
+      throw new Error(response.statusText);
+    })
+  .then(responseJson =>
+    displayQuote(responseJson))
+  .catch(err => {
+    $('#js-error-message').text(`Something went wrong: ${err.message}`);
+  });
   }
-
+ 
   //ADVICE SECTION
   function displayAdvice(responseJson){ //display random piece of advice
     console.log(responseJson);

@@ -132,11 +132,14 @@ button{
 
 @media all and (min-width: 550px){
     #js-form, #results{
-        margin: 0 150px;
+        margin: 0 130px;
     }
     h1{
         font-size: 70px;
-        margin: 150px 150px 5px;
+        margin: 150px 130px 5px;
+    }
+    h2{
+        font-size:30px;
     }
     h3{
         font-size: 22px;

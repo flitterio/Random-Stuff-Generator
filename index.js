@@ -24,6 +24,7 @@ function displayImage(responseJson){ //display random image from pexel search
     $('html').removeClass('background');
     $('h1').addClass('hidden');
     $('#results').removeClass('hidden');
+    $('body').removeClass('space');
   const random = Math.floor(Math.random() * Math.floor(responseJson.photos.length));
   $('#image').empty();
   $('#image').append(`<img src="${responseJson.photos[random].src.medium}">`);

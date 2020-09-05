@@ -4,19 +4,25 @@ color {cyber-grape: #3D3765ff;
 --lapis-lazuli: #305C93ff;
 --english-violet: #4F3155ff;
 }
-
+body{
+    margin: auto;
+}
 .container{
   text-align: center;
-  margin: 0px 0;
 }
 h1{
-    font-size: 60px;
+    font-size: 40px;
     background-color: rgba(168, 205, 245, 0.644);
     border-radius: 25px;
     padding: 5px;
+    margin: 50px 0 5px;
 }
 .hidden{
     display: none;
+}
+
+.space{
+    margin: 200px 5px;
 }
 /*for form */
 html{
@@ -41,14 +47,18 @@ html{
 }
 
 label{
-    font-size: 40px;
-}
-input{
     font-size: 30px;
+}
+input {
+    max-width: 100%;
+    font-size: 15px;
+    height: 10%;
+    padding: 10px;
     margin: 5px 0;
     font-family: 'Kumbh Sans', sans-serif;
     text-align: center;
     background-color: rgb(199, 196, 209);
+    
    
 }
 
@@ -56,8 +66,8 @@ button, .submit{
     border-radius: 15px;
     width:280px;
     font-family: 'PT Sans Caption', sans-serif;
-    /*background-color: rgb(174, 145, 180);
-    color: rgb(5, 8, 12); */
+    /*background-color: rgb(174, 145, 180); */
+    color: rgb(5, 8, 12); 
     background-color: #0A0418ff;
     color: rgb(199, 196, 209);
     border-color:#0A0418ff;
@@ -65,21 +75,39 @@ button, .submit{
 
 .submit{
     padding:5px;
-    font-size:30px;
+    font-size:20px;
 }
+
+.fun {
+    background-color: #0A0418ff;
+    transition-property: background-color, border-radius;
+    transition-duration:.5s, .5s;
+    transition-timing-function: linear, ease-in;
+  }
+  .fun:hover {
+    background: rgb(148, 61, 165);
+    border-radius: 50%;
+  }
+  
 
 /*Results*/
-
-h2{
-    font-size: 40px;
+.quote{
+    height: 25%;
 }
-
 h3{
-    font-size: 25px;
+    font-size: 100%;
 }
-
 p{
-    font-size: 25px;
+    font-size: 100%;
+}
+.advice{
+    height: 35%;
+}
+h2{
+    font-size: 28px
+}
+.image{
+    height: 40%;
 }
 
 img {
@@ -93,12 +121,13 @@ img {
     justify-content: space-around;
     margin: 10px;
     padding:10px;
+    height: 15%;
 }
 
 button{
     width: 150px;
     padding: 4px;
-    font-size: 25px;
+    font-size: 20px; 
 }
 
 @media all and (min-width: 800px){
@@ -109,15 +138,19 @@ button{
         font-size: 70px;
         margin: 150px 150px 5px;
     }
-    h2{
-        font-size: 45px;
+    label{
+        font-size: 40px;
     }
 
-    h3{
+    input{
         font-size: 35px;
     }
+    .submit{
+        font-size: 30px;
+    }
+    
 
-    p{
+    button{
         font-size: 30px;
     }
 }

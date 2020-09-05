@@ -104,7 +104,7 @@ p{
     height: 35%;
 }
 h2{
-    font-size: 28px
+    font-size: 25px
 }
 .image{
     height: 40%;
@@ -130,13 +130,19 @@ button{
     font-size: 20px; 
 }
 
-@media all and (min-width: 800px){
+@media all and (min-width: 550px){
     #js-form, #results{
         margin: 0 150px;
     }
     h1{
         font-size: 70px;
         margin: 150px 150px 5px;
+    }
+    h3{
+        font-size: 22px;
+    }
+    p{
+        font-size: 20px
     }
     label{
         font-size: 40px;
@@ -149,7 +155,6 @@ button{
         font-size: 30px;
     }
     
-
     button{
         font-size: 30px;
     }

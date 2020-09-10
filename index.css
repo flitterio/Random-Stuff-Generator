@@ -1,9 +1,4 @@
-color {cyber-grape: #3D3765ff;
---xiketic: #0A0418ff;
---baby-blue-eyes: #A8CDF5ff;
---lapis-lazuli: #305C93ff;
---english-violet: #4F3155ff;
-}
+/*General Appearance MOBILE FIRST DESIGN*/
 body{
     margin: auto;
 }
@@ -24,7 +19,8 @@ h1{
 .space{
     margin: 200px 5px;
 }
-/*for form */
+
+/*form */
 html{
     font-family: 'Kumbh Sans', sans-serif;
     background-color: #A8CDF5ff;
@@ -66,7 +62,6 @@ button, .submit{
     border-radius: 15px;
     width:280px;
     font-family: 'PT Sans Caption', sans-serif;
-    /*background-color: rgb(174, 145, 180); */
     color: rgb(5, 8, 12); 
     background-color: #0A0418ff;
     color: rgb(199, 196, 209);
@@ -130,6 +125,7 @@ button{
     font-size: 20px; 
 }
 
+/*FOR LARGER SCREENS */
 @media all and (min-width: 550px){
     #js-form, #results{
         margin: 0 130px;

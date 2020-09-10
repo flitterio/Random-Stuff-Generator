@@ -21,15 +21,15 @@ function displayImage(responseJson){ //display random image from pexel search
   }
   else{
     $('#js-form').remove(); //removes the form
-    $('html').removeClass('background');
-    $('h1').addClass('hidden');
-    $('#results').removeClass('hidden');
-    $('body').removeClass('space');
-  const random = Math.floor(Math.random() * Math.floor(responseJson.photos.length));
+    $('html').removeClass('background'); //changes background color
+    $('h1').addClass('hidden'); //hides the title
+    $('#results').removeClass('hidden'); //reveals the results page
+    $('body').removeClass('space'); //removes space
+  const random = Math.floor(Math.random() * Math.floor(responseJson.photos.length)); //gets random image
   $('#image').empty();
-  $('#image').append(`<img src="${responseJson.photos[random].src.medium}">`);
+  $('#image').append(`<img src="${responseJson.photos[random].src.medium}">`); //displays the image
 
-  getAdvice();
+  getAdvice(); //calls getAdvice function
   }
 }
 

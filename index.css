@@ -2,11 +2,10 @@
 body{
     margin: auto;
 }
-.container{
-  text-align: center;
-}
+
 h1{
     font-size: 40px;
+    text-align: center;
     background-color: rgba(168, 205, 245, 0.644);
     border-radius: 25px;
     padding: 5px;
@@ -39,7 +38,6 @@ html{
     border-radius: 25px;
    background-color: rgba(168, 205, 245, 0.644);
     text-align: center;
-   
 }
 
 label{
@@ -60,12 +58,15 @@ input {
 
 button, .submit{
     border-radius: 15px;
-    width:280px;
+    margin: 0 15px;
+    width: auto;
     font-family: 'PT Sans Caption', sans-serif;
     color: rgb(5, 8, 12); 
     background-color: #0A0418ff;
     color: rgb(199, 196, 209);
     border-color:#0A0418ff;
+    height: auto;
+
 }
 
 .submit{
@@ -86,23 +87,32 @@ button, .submit{
   
 
 /*Results*/
-.quote{
-    height: 25%;
+.container{
+    text-align: center;
+    display: flex;
+   flex-direction: column;
+   margin: 0; 
+   align-content: stretch;
+  }
+
+.item{
+    flex: 1;
 }
+.item-double{
+    flex: 2;   
+}
+.item-triple{
+    flex: 4;
+}
+
 h3{
     font-size: 100%;
 }
 p{
     font-size: 100%;
 }
-.advice{
-    height: 35%;
-}
 h2{
-    font-size: 25px
-}
-.image{
-    height: 40%;
+    font-size: 100%;
 }
 
 img {
@@ -120,9 +130,8 @@ img {
 }
 
 button{
-    width: 150px;
-    padding: 4px;
-    font-size: 20px; 
+    font-size: 18px; 
+    max-width: auto;
 }
 
 /*FOR LARGER SCREENS */
@@ -130,6 +139,7 @@ button{
     #js-form, #results{
         margin: 0 130px;
     }
+    
     h1{
         font-size: 70px;
         margin: 150px 130px 5px;
@@ -156,5 +166,6 @@ button{
     
     button{
         font-size: 30px;
-    }
+        height: auto;
+        }
 }

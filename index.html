@@ -7,24 +7,25 @@
     <title>Random Stuff Generator</title>
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=PT+Sans+Caption&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=PT+Sans+Caption&display=swap">
 </head>
 <body class="space">
-    <div class="container">
+    <div class="playspace">
         <h1>RaNdOm StUff GEneRaTor</h1>
         <form id="js-form">
             <label for="js-search">Enter anything in the box below</label>
             <br>
             <input type="text" name="search" id="js-search" placeholder="ex) your favorite color" required>
             <br>
+            <p>(You'll get a random, related image, a completely random piece of advice and unrelated quote)</p>
             <input type="submit" class="submit fun" value="Let's Get RaNDoM">
         </form>
         <p id="js-error-message" class="error-message"></p>
         <section id="results" class="hidden results">
-            <div id="advice" class="advice"></div>
-            <div id="image" class="image"></div>
-            <div id="quote" class="quote"></div>
-            <div id="buttons" class="group"></div>
+            <div id="advice" class="advice item"></div>
+            <div id="image" class="image item-triple"></div>
+            <div id="quote" class="quote item-double"></div>
+            <div id="buttons" class="item group"></div>
         </section>
        </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>

@@ -14,7 +14,6 @@ function formatQueryParams(params){ //for pexel api search
 }
 
 function displayImage(responseJson){ //display random image from pexel search
-  console.log(responseJson);
   if(responseJson.total_results === 0){
     store.pop();
     return $('#js-form').append(`<h2 id="error">Results Not Found, Try Searching Something Else </h2>`);
@@ -24,11 +23,13 @@ function displayImage(responseJson){ //display random image from pexel search
     $('html').removeClass('background'); //changes background color
     $('h1').addClass('hidden'); //hides the title
     $('#results').removeClass('hidden'); //reveals the results page
+    $('#results').addClass('container');
     $('body').removeClass('space'); //removes space
   const random = Math.floor(Math.random() * Math.floor(responseJson.photos.length)); //gets random image
+  const imgUrl = responseJson.photos[random].url;
+  const alt = imgUrl.slice(29);
   $('#image').empty();
-  $('#image').append(`<img src="${responseJson.photos[random].src.medium}">`); //displays the image
-
+  $('#image').append(`<img src="${responseJson.photos[random].src.medium}" alt="`+ alt + `">`); //displays the image
   getAdvice(); //calls getAdvice function
   }
 }
@@ -41,7 +42,6 @@ function getImage(query){ //retrieve image from json
     const queryString=
     formatQueryParams(params); 
     const pexelApiUrl = pexelUrl + "?" + queryString + "&per_page=75"; //makes pexel api url
-    console.log(pexelApiUrl);
 
     const options = { //authorizes use of pexelapi with key
       headers: new Headers({
@@ -61,10 +61,9 @@ function getImage(query){ //retrieve image from json
 }
 
   function displayQuote(responseJson){ //display random quote
-    console.log(responseJson);
     $('#quote').empty();
     $('#quote').append(`<h3><em>"${responseJson.content}"</em></h3><p>By ${responseJson.originator.name}</p>`);
-    $('#buttons').append(`<button type="button" class="new-result item">NEW RESULT</button><button type="button" class="restart item">START OVER</button>`);
+    $('#buttons').append(`<button type="button" class="new-result itemB">NEW RESULT</button><button type="button" class="restart itemB">START OVER</button>`);
 
   }
 
@@ -91,7 +90,6 @@ function getImage(query){ //retrieve image from json
  
   //ADVICE SECTION
   function displayAdvice(responseJson){ //display random piece of advice
-    console.log(responseJson);
     $('#advice').empty();
     $('#advice').append(`<h2>${responseJson.slip.advice}</h2>`); //puts advice on image
     getQuote(); //calls getQuote function
@@ -125,7 +123,6 @@ function watchForm(){ //event listener for initial form
 //BUTTONS
 function newResults(){
   $('#buttons').on('click', '.new-result', event => {
-    console.log('new result button clicked');
     event.preventDefault();
     $('#buttons').empty();
     getImage(store[0]);
@@ -133,16 +130,15 @@ function newResults(){
 }
 function startOver(){
   $('#buttons').on('click', '.restart', event =>{
-    console.log('restart button pressed');
       location.reload();
   });
 }
 
 //RENDER
-function renderRandom(){
+function Random(){
   watchForm();
   newResults();
   startOver();
 }
 
-$(renderRandom);
+$(Random);

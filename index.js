@@ -23,11 +23,9 @@ function displayImage(responseJson){ //display random image from pexel search
     $('html').removeClass('background'); //changes background color
     $('h1').addClass('hidden'); //hides the title
     $('#results').removeClass('hidden'); //reveals the results page
-    $('#results').addClass('container');
     $('body').removeClass('space'); //removes space
   const random = Math.floor(Math.random() * Math.floor(responseJson.photos.length)); //gets random image
-  const imgUrl = responseJson.photos[random].url;
-  const alt = imgUrl.slice(29);
+  const alt = "random image result for " + store[0];
   $('#image').empty();
   $('#image').append(`<img src="${responseJson.photos[random].src.medium}" alt="`+ alt + `">`); //displays the image
   getAdvice(); //calls getAdvice function
@@ -62,7 +60,7 @@ function getImage(query){ //retrieve image from json
 
   function displayQuote(responseJson){ //display random quote
     $('#quote').empty();
-    $('#quote').append(`<h3><em>"${responseJson.content}"</em></h3><p>By ${responseJson.originator.name}</p>`);
+    $('#quote').append(`<h3>A Random, Unrelated Quote:</h3><h2><em>"${responseJson.content}"</em></h2><p>By ${responseJson.originator.name}</p>`);
     $('#buttons').append(`<button type="button" class="new-result itemB">NEW RESULT</button><button type="button" class="restart itemB">START OVER</button>`);
 
   }
@@ -91,7 +89,7 @@ function getImage(query){ //retrieve image from json
   //ADVICE SECTION
   function displayAdvice(responseJson){ //display random piece of advice
     $('#advice').empty();
-    $('#advice').append(`<h2>${responseJson.slip.advice}</h2>`); //puts advice on image
+    $('#advice').append(`<h3>A random piece of fun advice:</h3><h2>${responseJson.slip.advice}</h2>`); //puts advice on image
     getQuote(); //calls getQuote function
    
   }
@@ -134,11 +132,11 @@ function startOver(){
   });
 }
 
-//RENDER
-function Random(){
+//Call functions
+function random(){
   watchForm();
   newResults();
   startOver();
 }
 
-$(Random);
+$(random);

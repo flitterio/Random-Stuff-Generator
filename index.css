@@ -1,6 +1,7 @@
 /*General Appearance MOBILE FIRST DESIGN*/
-body{
-    margin: auto;
+html, body{
+  height: 100%;
+  width: 100%;
 }
 
 h1{
@@ -9,14 +10,12 @@ h1{
     background-color: rgba(168, 205, 245, 0.644);
     border-radius: 25px;
     padding: 5px;
-    margin: 50px 0 5px;
-}
-.hidden{
-    display: none;
+    margin: 0px 10px 5px;
 }
 
+
 .space{
-    margin: 200px 5px;
+    margin: 150px 5px;
 }
 
 /*form */
@@ -93,49 +92,48 @@ button, .submit{
    flex-direction: column;
    margin: 0; 
    align-content: stretch;
+   font-size: 20px;
   }
 
 .item{
     flex: 1;
+    flex-wrap: wrap;
+    font-size: 1em;
 }
 .item-double{
     flex: 2;   
+    flex-wrap: wrap;
+    font-size: .7em;
 }
 .item-triple{
-    flex: 4;
-}
-
-h3{
-    font-size: 100%;
-}
-p{
-    font-size: 100%;
-}
-h2{
-    font-size: 100%;
+    flex: 3;
 }
 
 img {
     max-width: 100%;
-}
+} 
 
 /*result page buttons */
 .group{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    font: 15px;
     margin: 10px;
     padding:10px;
     height: 15%;
 }
+.itemB{
+    font-size: 2rem;
+}
 
-button{
-    font-size: 18px; 
-    max-width: auto;
+.hidden{
+    display: none;
 }
 
 /*FOR LARGER SCREENS */
-@media all and (min-width: 550px){
+@media all and (min-width: 800px){
+    
     #js-form, #results{
         margin: 0 130px;
     }
@@ -144,14 +142,14 @@ button{
         font-size: 70px;
         margin: 150px 130px 5px;
     }
-    h2{
-        font-size:30px;
+
+    .container{
+        font-size: 30px;
+        max-height: 100%;
     }
-    h3{
-        font-size: 22px;
-    }
-    p{
-        font-size: 20px
+   
+    .bigP{
+        font-size: 30px;
     }
     label{
         font-size: 40px;
@@ -165,7 +163,6 @@ button{
     }
     
     button{
-        font-size: 30px;
-        height: auto;
+        font-size: 50px;
         }
 }

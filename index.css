@@ -97,7 +97,6 @@ button, .submit{
 
 .item{
     flex: 1;
-    flex-wrap: wrap;
     font-size: 1em;
 }
 .item-double{
@@ -124,7 +123,7 @@ img {
     height: 15%;
 }
 .itemB{
-    font-size: 2rem;
+    font-size: 1.3em;
 }
 
 .hidden{
@@ -161,8 +160,5 @@ img {
     .submit{
         font-size: 30px;
     }
-    
-    button{
-        font-size: 50px;
-        }
+
 }
